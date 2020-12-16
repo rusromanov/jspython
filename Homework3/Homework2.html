@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<script>
+  "use strict";
+  const basket = [
+    {
+      id_product: 123,
+      product_name: "Ноутбук",
+      price: 45600,
+      quantity: 1
+    },
+    {
+      id_product: 456,
+      product_name: "Мышка",
+      price: 1000,
+      quantity: 1
+    }
+  ];
+
+
+  function countBasketPrice(basket) {
+    return basket.reduce((totalPrice, cartItem) => totalPrice += cartItem.price * cartItem.quantity, 0);
+  }
+
+  console.log(countBasketPrice(basket));
+
+  let new_arr = [['товар_1', 2, 150], ['товар_2', 4, 75], ['товар_3', 5, 100]];
+
+  const sum = new_arr.reduce((sum, good) => {
+      return sum += good[1] * good[2];
+  }, 0);
+  console.log(sum);
+
+
+  const Basket = {
+    goods: [
+      {
+        id_product: 123,
+        product_name: "Ноутбук",
+        price: 45600,
+        quantity: 1
+      },
+      {
+        id_product: 456,
+        product_name: "Мышка",
+        price: 1000,
+        quantity: 1
+      }
+    ],
+    countBasketPrice() {
+      return this.goods.reduce((totalPrice, cartItem) => totalPrice += cartItem.price, 0);
+    }
+  };
+
+  console.log(Basket.countBasketPrice());
+</script>
