@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Бродилка</title>
+</head>
+<body>
+  <script>
+    function getDigitsOfNumber(num) {
+      if (!Number.isInteger(num) || num < 0 || num > 999) {
+        console.log('Значение аргумента должно быть целым числом в диапазоне [0 .. 999].');
+        return {};
+      }
+
+      const obj = {};
+      obj.firstDigit = num % 10;
+      obj.secondDigit = Math.floor(num / 10) % 10;
+      obj.thirdDigit = Math.floor(num / 100);
+
+      return obj;
+    }
+
+    console.log(getDigitsOfNumber(123));
+  </script>
+</body>
+</html>
